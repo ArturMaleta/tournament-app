@@ -1,12 +1,18 @@
 package mal.art.demotournamentapp.Controller;
 
+import mal.art.demotournamentapp.Entity.Country;
+import mal.art.demotournamentapp.Entity.Player;
 import mal.art.demotournamentapp.Service.CountryService;
 import mal.art.demotournamentapp.Service.LeagueService;
 import mal.art.demotournamentapp.Service.PlayerService;
+import mal.art.demotournamentapp.Utils.ViewNames;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @Controller
 public class AppController {
@@ -22,7 +28,12 @@ public class AppController {
 
     @ResponseBody
     @GetMapping("summary-players")
-    public String begin() {
-        return "How is this even possible?!";
+    public String begin(Model theModel) {
+
+        List<Player> thePlayers = playerService.getPlayers();
+
+        theModel.addAttribute("player", thePlayers);
+
+        return ViewNames.SUMMARY_PLAYERS;
     }
 }

@@ -20,7 +20,7 @@ public class CountryDAOImpl implements CountryDAO {
 
         Session currentSession = sessionFactory.getCurrentSession();
 
-        Query<Country> theQuery = currentSession.createQuery("from Country order by country", Country.class);
+        Query<Country> theQuery = currentSession.createQuery("SELECT country FROM Country ", Country.class);
 
         List<Country> country = theQuery.getResultList();
 

@@ -2,7 +2,6 @@ package mal.art.demotournamentapp.Service;
 
 import mal.art.demotournamentapp.DAO.PlayerDAO;
 import mal.art.demotournamentapp.Entity.Player;
-import mal.art.demotournamentapp.Service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
