@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paleyrs summary</title>
+</head>
+<body>
+    <div align="center">
+        <div id="header">
+            <h2>FIFA Tournament</h2>
+        </div>
+    </div>
+    <div align="center">
+        <div id="content">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Team</th>
+                </tr>
+                <c:forEach var="tempPlayer" items="${players}">
+                    <tr>
+                        <td>${tempPlayer.name}</td>
+                        <td>${tempPlayer.team}</td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </div>
+
+    <div align="center">
+        <div>
+            <input type="button" value="Go to table"
+                   onclick="window.location.href='table';" class="table" />
+        </div>
+    </div>
+</body>
+</html>

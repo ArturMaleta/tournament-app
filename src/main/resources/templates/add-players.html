@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add players</title>
+</head>
+<body>
+    <div align="center" id="wrapper">
+        <div id="header">
+            <h2>FIFA Tournament</h2>
+        </div>
+        <br> <br>
+        <form action="savePlayer" modelAttribute="player" method="POST">
+            <table>
+                <tbody>
+                <tr>
+
+                    <td><label>Player name:</label></td>
+
+                    <td><input path="name" type="text" />
+
+                    <td><select name="country">
+                        <option value="-">Select country</option>
+                        <c:forEach items="${country}" var="country">
+                            <option value="${country.id}">${country.country}</option>
+                        </c:forEach>
+                    </select></td>
+
+                    <td><select name="team">
+                        <option value="-">Select team</option>
+                        <c:forEach items="${team}" var="team">
+                            <option value="${teams.id}">${team.team}</option>
+                        </c:forEach>
+                    </select></td>
+
+                    <td><label></label></td>
+                    <td><input type="submit" value="Save player" class="save" /></td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <br>
+    <br>
+
+    <div align="center">
+        <div id="content">
+            <input type="button" value="Add player"
+                   onclick="window.location.href=''; retun false;" class="add-button" />
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div align="center">
+        <div>
+            <input type="button" value="Ready"
+                   onclick="window.location.href='summary-players';" class="add-button" />
+        </div>
+    </div>
+</body>
+</html>

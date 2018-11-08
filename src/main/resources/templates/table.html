@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tournament table</title>
+</head>
+<body>
+    <div align="center">
+        <div>
+            <h2>Tournament table</h2>
+        </div>
+    </div>
+    <div align="center">
+        <div>
+            <table>
+                <tr>
+                    <th>Team</th>
+                    <th>MP</th> <!-- matches played -->
+                    <th>W</th> <!-- Win -->
+                    <th>D</th> <!-- Draw -->
+                    <th>L</th> <!-- Lost -->
+                    <th>GS</th> <!-- Goals scored -->
+                    <th>GL</th> <!-- Goals lost -->
+                    <th>GD</th> <!-- Goal difference -->
+                    <th>PT</th> <!-- Points -->
+
+                </tr>
+                <c:forEach var="tempPlayer" items="${players}">
+                    <tr>
+                        <td>${tempPlayer.team}</td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div align="center">
+        <div>
+            <input type="button" value="Schedule tournament"
+                   onclick="window.location.href='add-players';" class="schedule" />
+        </div>
+    </div>
+</body>
+</html>
