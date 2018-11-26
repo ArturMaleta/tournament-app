@@ -20,14 +20,6 @@ public class PlayerDAOImpl implements PlayerDAO {
         Session currentSession = sessionFactory.getCurrentSession();
 
         Query theQuery = currentSession.createQuery("select team from Player ", Player.class);
-        // round-robin algorithm should be implemented here
-
-        // chosenTeams = new ArrayList();
-        // algorithm...
-
-        // save scheduled matches to db
-        // match nr 1
-        // match nr 2 etc.
 
         return theQuery.getResultList(); // return scheduledLeague;
     }
@@ -45,6 +37,15 @@ public class PlayerDAOImpl implements PlayerDAO {
     public void savePlayer(Player thePlayer) {
 
         Session currentSession = sessionFactory.getCurrentSession();
+
+        // round-robin algorithm should be implemented here
+
+        // chosenTeams = new ArrayList();9
+        // algorithm...
+
+        // save scheduled matches to db
+        // match nr 1
+        // match nr 2 etc.
 
         currentSession.save(thePlayer);
     }
