@@ -5,7 +5,6 @@ import mal.art.demotournamentapp.Entity.Player;
 import mal.art.demotournamentapp.Service.CountryService;
 import mal.art.demotournamentapp.Service.LeagueService;
 import mal.art.demotournamentapp.Service.PlayerService;
-import mal.art.demotournamentapp.Utils.ViewNames;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,12 +27,12 @@ public class AppController {
 
     @ResponseBody
     @GetMapping("summary-players")
-    public String begin(Model theModel) {
+    public String getSummaryOfPlayers(Model theModel) {
 
         List<Player> thePlayers = playerService.getPlayers();
 
-        theModel.addAttribute("player", thePlayers);
+        theModel.addAttribute("players", thePlayers);
 
-        return ViewNames.SUMMARY_PLAYERS;
+        return "summary-players.html";
     }
 }

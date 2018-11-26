@@ -19,8 +19,7 @@ public class PlayerDAOImpl implements PlayerDAO {
     public List<Player> getTeams() {
         Session currentSession = sessionFactory.getCurrentSession();
 
-        Query<Player> theQuery = currentSession.createQuery("select team from Player ", Player.class);
-        List<Player> chosenTeams = theQuery.getResultList();
+        Query theQuery = currentSession.createQuery("select team from Player ", Player.class);
         // round-robin algorithm should be implemented here
 
         // chosenTeams = new ArrayList();
@@ -30,18 +29,16 @@ public class PlayerDAOImpl implements PlayerDAO {
         // match nr 1
         // match nr 2 etc.
 
-        return chosenTeams; // return scheduledLeague;
+        return theQuery.getResultList(); // return scheduledLeague;
     }
 
     @Override
     public List<Player> getPlayers() {
         Session currentSession = sessionFactory.getCurrentSession();
 
-        Query<Player> theQuery = currentSession.createQuery("SELECT name, team FROM Player");
+        Query theQuery = currentSession.createQuery("SELECT name, team FROM Player", Player.class);
 
-        List<Player> players = theQuery.getResultList();
-
-        return players;
+        return theQuery.getResultList();
     }
 
     @Override

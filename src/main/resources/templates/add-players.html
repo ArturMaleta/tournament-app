@@ -9,33 +9,38 @@
         <div id="header">
             <h2>FIFA Tournament</h2>
         </div>
-        <br> <br>
+        <br>
+        <br>
+
+        <tr th:each="players: ${pl}"></tr>
+
         <form action="savePlayer" modelAttribute="player" method="POST">
             <table>
                 <tbody>
-                <tr>
 
-                    <td><label>Player name:</label></td>
 
-                    <td><input path="name" type="text" />
+                <!--<tr>-->
 
-                    <td><select name="country">
-                        <option value="-">Select country</option>
-                        <c:forEach items="${country}" var="country">
-                            <option value="${country.id}">${country.country}</option>
-                        </c:forEach>
-                    </select></td>
+                    <!--<td><label>Player name:</label></td>-->
 
-                    <td><select name="team">
-                        <option value="-">Select team</option>
-                        <c:forEach items="${team}" var="team">
-                            <option value="${teams.id}">${team.team}</option>
-                        </c:forEach>
-                    </select></td>
+                    <!--<td><input path="name" type="text" />-->
 
-                    <td><label></label></td>
-                    <td><input type="submit" value="Save player" class="save" /></td>
-                </tr>
+                    <!--<td><select name="country">-->
+                        <!--<option>Select country</option>-->
+                        <!--<c:forEach items="${country}" var="country">-->
+                            <!--<option value="${country.id}"></option>-->
+                        <!--</c:forEach>-->
+                    <!--</select></td>-->
+
+                    <!--<td><select name="team">-->
+                        <!--<option>Select team</option>-->
+                        <!--<c:forEach items="${team}" var="team">-->
+                            <!--<option value="${teams.id}"></option>-->
+                        <!--</c:forEach>-->
+                    <!--</select></td>-->
+
+                    <!--<td><input type="submit" value="Save player" class="save" /></td>-->
+                <!--</tr>-->
                 </tbody>
             </table>
         </form>
@@ -44,7 +49,7 @@
     <br>
 
     <div align="center">
-        <div id="content">
+        <div>
             <input type="button" value="Add player"
                    onclick="window.location.href=''; retun false;" class="add-button" />
         </div>
